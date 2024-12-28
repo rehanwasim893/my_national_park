@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form - National Parks Portal</title>
+    <meta name="description" content="Share your feedback about your experience at our National Parks">
+    <meta name="keywords" content="Feedback, National Parks, Wildlife, Nature, Experience">
+    
+    <!-- Bootstrap 5.0.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #e8f5e9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .feedback-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #2e7d32;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .btn-success {
+            background-color: #2e7d32;
+            border-color: #2e7d32;
+        }
+
+        .btn-success:hover {
+            background-color: #1b5e20;
+            border-color: #1b5e20;
+        }
+
+        .rating .star {
+            font-size: 40px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .rating .star.selected {
+            color: #ffd700;
+        }
+
+        .rating .star:hover {
+            color: #ffd700;
+        }
+
+        footer {
+            background: linear-gradient(to right, #2e7d32, #1b5e20);
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #e8f5e9;
+        }
+
+        .social-icons i {
+            margin: 0 10px;
+            font-size: 2rem;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons i:hover {
+            transform: scale(1.2);
+        }
+
+        .button {
+            position: relative;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(45deg, #2e7d32, #1b5e20);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 5px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .feedback-container {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            .rating .star {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-success text-white text-center py-3 d-flex flex-column align-items-center">
+        <div class="d-flex align-items-center">
+            <img src="images/logo.png" alt="Logo" class="img-fluid" style="max-height: 100px; margin-right: 15px;"> <!-- Logo -->
+            <div>
+                <h1 class="mb-0">National Parks Web Portal</h1>
+                <p class="mb-0">Discover the beauty of wildlife and nature!</p>
+            </div>
+        </div>
+    </header>
+
+
+        <!-- Navbar Section -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="safari-timings.html">Animals</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="galleryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gallery</a>
+                            <ul class="dropdown-menu" aria-labelledby="galleryDropdown">
+                                <li><a class="dropdown-item" href="gallery.html">Photo Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="location.html">Location</a></li>
+                        <li class="nav-item"><a class="nav-link" href="feedback.html">FeedBack Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <div class="container">
+        <div class="feedback-container">
+            <h2 class="text-center">Share Your Experience</h2>
+            <p class="text-center">Your feedback helps us improve our services and enhance the experience for all visitors.</p>
+
+            <form action="submit_feedback.php" method="POST">
+                <div class="row mb-4">
+                    <label for="name" class="col-sm-3 col-form-label">Full Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <label for="email" class="col-sm-3 col-form-label">Email Address</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+                </div>
+
+                
+
+                <div class="row mb-4">
+                    <div class="col-12 text-center">
+                        <h5 class="mb-3">Rate Your Overall Experience</h5>
+                        <div class="rating mb-3">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <div id="rating-value">
+                            <p>Your rating: <span id="rating-text">0</span> stars</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <label for="comments" class="col-sm-3 col-form-label">Your Feedback</label>
+                    <div class="col-sm-9">
+                        <textarea id="comments" name="comments" rows="6" class="form-control" required 
+                            placeholder="Please share your experience, suggestions, or concerns..."></textarea>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg px-5">Submit Feedback</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style="background-color: #006400; margin-top: 50px;">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center p-4" style="background-color: #4CAF50;">
+            <div class="me-5">
+                <span>Stay connected with us:</span>
+            </div>
+            <div>
+                <a href="#" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white me-4"><i class="fab fa-google"></i></a>
+                <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white me-4"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white me-4"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+  
+        <section>
+            <div class="container text-center text-md-start mt-5">
+                <div class="row">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold">National Parks Portal</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>Discover the beauty of nature and wildlife through our portal.</p>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold">Explore</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p><a href="gallery2.html" class="text-white">Gallery</a></p>
+                        <p><a href="location.html" class="text-white">location</a></p>
+                        <p><a href="about.html" class="text-white">about</a></p>
+                        <p><a href="safari-timings.html" class="text-white">Animals</a></p>
+                    </div>
+         
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold">Quick Links</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p><a href="#" class="text-white">Your Account</a></p>
+                        <p><a href="#" class="text-white">Help</a></p>
+                        <p><a href="#" class="text-white">Contact Us</a></p>
+                        <p><a href="#" class="text-white">Privacy Policy</a></p>
+                    </div>
+        
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold">Contact</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p><i class="fas fa-home me-3"></i> Karachi, PK 74000</p>
+                        <p><i class="fas fa-envelope me-3"></i> info@wildpark.com</p>
+                        <p><i class="fas fa-phone me-3"></i> +92 123 456 789</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section in Footer -->
+        <section class="text-center p-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115828.47388337745!2d66.8788573433594!3d24.876148699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f0066951679%3A0x8867e5850aed836c!2sKarachi%20Zoo!5e0!3m2!1sen!2s!4v1734168173655!5m2!1sen!2s" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2024 Copyright:
+            <a class="text-white" href="#">WildPark.com</a>
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+       
+        const currentPage = window.location.pathname.split("/").pop();
+        
+        
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    });
+</script>
+</html>
